@@ -1,0 +1,21 @@
+name: Tyk Schema Validation
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  schema-validation:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checking out Repo
+      uses: actions/checkout@v4
+
+    - name: Listing Repo content
+      run: |
+        ls -la
+        pwd
