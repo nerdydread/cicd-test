@@ -1,6 +1,6 @@
 {
     "id": "5e7509368fc128000101ee0e",
-    "name": "New Member REST API",
+    "name": "New Member API",
     "slug": "new-member-api",
     "listen_port": 0,
     "protocol": "",
