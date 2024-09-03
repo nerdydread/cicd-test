@@ -20,4 +20,9 @@ jobs:
       run: |
         ls -la
         pwd
-        git branch
+    - name: Install JQ
+      uses: dcarbone/install-jq-action@v2.1.0
+    
+    - name: Validate JQ install
+      run: |
+        jq
