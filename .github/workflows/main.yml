@@ -27,3 +27,14 @@ jobs:
       run: |
         which jq
         jq --version
+    - name: Check proxy.target_url in JSON files
+      run: |
+        for file in $(find . -name "*.json"); do
+          echo "Checking $file"
+          if jq -e '.proxy.target_url | length > 0' "$file" > /dev/null; then
+            echo "$file contains a valid proxy.target_url."
+          else
+            echo "$file does NOT contain a valid proxy.target_url."
+            exit 1
+          fi
+        done
